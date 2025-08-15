@@ -6,8 +6,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\BookController;
 use App\Http\Controllers\Api\LoanController;
 use App\Http\Controllers\Api\CategoryController;
-use App\Http\Controllers\UserController;
-use App\Http\Controllers\AuthController;
+use App\Http\Controllers\Api\UserController;
+use App\Http\Controllers\Api\AuthController;
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
@@ -28,7 +28,6 @@ Route::post('loans/{id}/return', [LoanController::class, 'returnLoan']);
 
 
 Route::post('/register', [AuthController::class, 'register']);
-Route::post('/register-seller', [SellerController::class, 'store']);
 Route::post('/login',    [AuthController::class, 'login']);
 Route::post('/logout',    [AuthController::class, 'logout']);
 Route::middleware('auth:sanctum')->post('/logout', [AuthController::class, 'logout']);
