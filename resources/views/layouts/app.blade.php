@@ -33,11 +33,25 @@
                     </form>
                 @endauth
                 @guest
+                    <a href="{{ route('home') }}"
+                        class="px-4 py-2 rounded-lg border border-blue-500 transition
+                 {{ request()->routeIs('home') ? ' bg-blue-600 text-white' : 'text-blue-500 hover:bg-blue-50' }}">
+                        Home
+                    </a>
+
                     <a href="{{ route('login') }}"
-                        class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition">Login</a>
+                        class="px-4 py-2 rounded-lg border border-blue-500 transition
+                  {{ request()->routeIs('login') ? ' bg-blue-600 text-white' : 'text-blue-500 hover:bg-blue-50' }}">
+                        Login
+                    </a>
+
                     <a href="{{ route('register') }}"
-                        class="px-4 py-2 border border-blue-500 text-blue-500 rounded-lg hover:bg-blue-50 transition">Register</a>
+                        class="px-4 py-2 rounded-lg border border-blue-500 transition
+              {{ request()->routeIs('register') ? ' bg-blue-600 text-white' : 'text-blue-500 hover:bg-blue-50' }}">
+                        Register
+                    </a>
                 @endguest
+
             </div>
         </div>
     </nav>
