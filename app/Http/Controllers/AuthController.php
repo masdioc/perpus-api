@@ -64,4 +64,8 @@ class AuthController extends Controller
         $request->session()->regenerateToken();
         return redirect()->route('login');
     }
+    public function profile()
+    {
+        return view('profile', ['title' => 'Profile']);
+    }
 }

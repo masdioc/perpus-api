@@ -17,6 +17,8 @@ Route::post('/register', [AuthController::class, 'register']);
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/profile', [AuthController::class, 'profile'])->name('profile')->middleware('auth');
+
 // Route::get('/', function () {
 //     $books = [
 //         [
